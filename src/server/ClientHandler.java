@@ -11,7 +11,6 @@ public class ClientHandler {
     private DataInputStream in;
     private DataOutputStream out;
     private String nickName;
-
     public ClientHandler(Server server, Socket socket) {
 
         try {
@@ -44,7 +43,6 @@ public class ClientHandler {
                     //цикл работы
                     while (true) {
                         String str = in.readUTF();
-
                         if (str.startsWith("/")) {
                             System.out.println(str);
                             if (str.equals("/end")) {
@@ -77,7 +75,6 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     void sendMsg(String msg) {
